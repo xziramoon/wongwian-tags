@@ -13,11 +13,15 @@ export default function SearchPanel() {
 
   useEffect(() => {
     if (!query) {
+      setResults([]);
       setOpen(false);
       return;
     }
     setResults(database.search(query));
     setOpen(true);
+    // re-run the search if the product database refreshes in the background
+    // (e.g. the 5-minute auto price-check) while the dropdown is still open
+    return database.onChange(() => setResults(database.search(query)));
   }, [query]);
 
   useEffect(() => {
@@ -62,8 +66,8 @@ export default function SearchPanel() {
             </div>
           )}
           {open &&
-            results.map((p) => (
-              <div className="s-item" key={p.Barcode} onClick={() => pick(p)}>
+            results.map((p, i) => (
+              <div className="s-item" key={`${p.Barcode}-${i}`} onClick={() => pick(p)}>
                 {p.Image && (
                   <img
                     className="s-thumb"
