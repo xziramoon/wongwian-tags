@@ -2,7 +2,7 @@ import type { Config } from './types';
 
 /* ⚠️ ห้ามแก้ — ยกมาจาก wongwian-ui.html ตรงตัวตาม README */
 export const CLOUD_DB_URL =
-  'https://docs.google.com/spreadsheets/d/e/2PACX-1vSF-0v8K7CwUzsuHEbGsXJ3Ga4c2MU6jiIYzqwrmKLCR3xBP5jgDkhBuFWQz3u7Xq3JEDJZsbYQodBX/pub?gid=857533628&single=true&output=csv';
+  'https://docs.google.com/spreadsheets/d/e/2PACX-1vRUuWPCwpQbleOg8F8Kyt34obiUG15BuUuHJvRfo_I5GSqlCPp638EqDUgcqHG0igWkg9g6ko7h9hYS/pub?gid=2051624344&single=true&output=csv';
 export const SHEET_EDIT_URL =
   'https://docs.google.com/spreadsheets/d/1-s82oHNNDUjwPyrkgSWP-YO2EHgVKK52-HV_FMh_wul/edit?gid=857533628#gid=857533628';
 export const AUTO_SYNC_TOPIC = 'cyborg-tag-sys-wongwian-v8';
