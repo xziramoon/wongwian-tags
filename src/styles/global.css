@@ -91,6 +91,17 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+/* tag.css resets <body> to overflow:visible for print (matching the original
+   single-file app) — but since this app's layout lives on #root instead of
+   <body>, #root also needs the same reset here, or its height:100vh/overflow:hidden
+   would clip the printout to one page instead of flowing across multiple A4 sheets. */
+@media print {
+  #root {
+    display: block;
+    height: auto;
+    overflow: visible;
+  }
+}
 a {
   color: var(--ac);
 }
